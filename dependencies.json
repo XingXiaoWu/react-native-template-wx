@@ -1,0 +1,9 @@
+{
+    "mobx": "^5.9.4",
+    "mobx-react": "^5.4.3",
+    "prop-types": "latest",
+    "react-art": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-native-gesture-handler": "^1.2.1",
+    "react-navigation": "^3.9.1"
+}
