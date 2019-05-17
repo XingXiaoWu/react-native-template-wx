@@ -1,0 +1,3 @@
+{
+    "initios": "chmod 777 ./script/initiOS.sh && ./script/initiOS.sh"
+}
