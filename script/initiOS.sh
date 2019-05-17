@@ -49,14 +49,12 @@ then
     pod install
 
     #4  绑定本地的默认library
-    cd ../Library/NativeBridage
-    pwd
-    yarn link
-    cd ../../
-    pwd
-    yarn link react-native-native-bridage
-    react-native link react-native-native-bridage
+    demoDir=$(cd ../ && pwd)
+    echo "demo的地址$demoDir"
+    cd $demoDir/Library/NativeBridage && yarn link
 
+    cd $demoDir && yarn link react-native-native-bridage && react-native link react-native-native-bridage
+    
     echo "一切都搞定了,开始运行iOS项目看下"
 :<<BLOCK
     # 进行替换
