@@ -22,7 +22,7 @@ export class Native {
 
     static showToast(message){
         if (Platform.OS === 'ios'){
-            NativeModules.native.showToast(message)
+            NativeModules.wxnative.showToast(message)
         } else {
             ToastAndroid.show(message)
         }
@@ -30,7 +30,7 @@ export class Native {
 
     static showLoading(){
         if (Platform.OS === 'ios'){
-            NativeModules.native.showLoading()
+            NativeModules.wxnative.showLoading()
         } else {
 
         }
@@ -39,7 +39,7 @@ export class Native {
     //环形loading
     static showRingLoading(){
         if (Platform.OS === 'ios'){
-            NativeModules.native.showRingLoading()
+            NativeModules.wxnative.showRingLoading()
         } else {
 
         }
@@ -47,7 +47,23 @@ export class Native {
 
     static dismissLoading(){
         if (Platform.OS === 'ios'){
-            NativeModules.native.dismissLoading()
+            NativeModules.wxnative.dismissLoading()
+        } else {
+            // ToastAndroid.show(message)
+        }
+    }
+
+    static navigate(moduleName,fileName){
+        if (Platform.OS === 'ios'){
+            NativeModules.wxnative.navigate(moduleName,fileName)
+        } else {
+            // ToastAndroid.show(message)
+        }
+    }
+
+    static popViewCtrl(){
+        if (Platform.OS === 'ios'){
+            NativeModules.wxnative.popViewCtrl()
         } else {
             // ToastAndroid.show(message)
         }

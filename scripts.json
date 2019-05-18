@@ -1,3 +1,4 @@
 {
+    "iosbundle":"react-native bundle --entry-file index.js --bundle-output ./ios/bundle/index.jsbundle --platform ios --assets-dest ./ios/bundle --dev false",
     "initios": "chmod 777 ./script/initiOS.sh && ./script/initiOS.sh"
 }

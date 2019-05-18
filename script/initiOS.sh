@@ -47,7 +47,8 @@ then
     "   ./Podfile
     #3. pod install
     pod install
-
+    echo "一切都搞定了,开始运行iOS项目看下"
+:<<BLOCK
     #4  绑定本地的默认library
     demoDir=$(cd ../ && pwd)
     echo "demo的地址$demoDir"
@@ -56,7 +57,7 @@ then
     cd $demoDir && yarn link react-native-native-bridage && react-native link react-native-native-bridage
     
     echo "一切都搞定了,开始运行iOS项目看下"
-:<<BLOCK
+
     # 进行替换
     # target 'demo' do
     #目标语句,
