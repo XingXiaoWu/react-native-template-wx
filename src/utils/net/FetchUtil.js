@@ -19,8 +19,10 @@
 
 import React from "react";
 import fetch from "./FetchBase";
-import {Toast} from "../../component";
-import {Native} from "../../native";
+import { Toast } from "../../component";
+import { Native } from "../../native";
+import RNFetchBlob from 'rn-fetch-blob'
+import { file } from "@babel/types";
 
 class Fetch {
     //网络超时时间(毫秒)
@@ -47,20 +49,20 @@ class Fetch {
     };
 
 
-//    get请求
+    //    get请求
     get(url, params) {
         return this.getFunction(url, params, this.head)
     }
 
 
-//    post请求
+    //    post请求
     post(url, params) {
         return this.postFunction(url, params, this.head)
     }
 
-//    postFrom请求
+    //    postFrom请求
     postForm(url, params) {
-        return this.postFormFunction(url,params,this.headForm)
+        return this.postFormFunction(url, params, this.headForm)
     }
 
 
@@ -202,6 +204,39 @@ class Fetch {
     }
 
 
+    // 下载bundle文件的
+    downLoadBundle() {
+        let url = 'http://127.0.0.1:3000/loginDemo.jsbundle'
+        let name = this.getFileName(url)
+        let dirs = RNFetchBlob.fs.dirs.DocumentDir
+        let path = dirs + "/" + name
+        RNFetchBlob
+            .config({
+                // 有文件默认覆盖
+                overwrite:true,
+                // 下载的指示器,ios执行
+                indicator:true,
+                // 允许自建ssl通信
+                trusty:true,
+                // add this option that makes response data to be stored as a file,
+                // this is much more performant.
+                fileCache: true,
+                // 拓展
+                appendExt: 'jsbundle',
+                // 路径
+                path:path
+
+            })
+            .fetch('GET', url, {
+                // Authorization: 'Bearer access-token...',
+                //some headers ..
+            })
+            .then((res) => {
+                // the temp file path
+                console.log('The file saved to ', res.path())
+            })
+    }
+
     //-----------------------------------------------------------------------------------------------------------------------------//
     //-----------------------------------------------------------------------------------------------------------------------------//
     //--------------------------------------------------------工具类----------------------------------------------------------------//
@@ -235,6 +270,27 @@ class Fetch {
             error.message = response.message;
             throw error;
         }
+    }
+
+
+    // webapp_work
+    // createFile(name){
+    //     let name = this.getFileName(url)
+    //     let dirs = RNFetchBlob.fs.dirs.DocumentDir
+        
+    // }
+   /**
+    * 
+    * @param {*} url url
+    * @return 返回文件名
+    */
+    getFileName(url){
+        let array = url.split("/");
+        let length = array.length -1;
+        let fileName = array[length]
+        let dir = fileName.split(".")
+        let result = "webapp_work/" + dir[0]+"/"+fileName
+        return result
     }
 }
 

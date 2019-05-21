@@ -20,5 +20,6 @@ export let ImageSources = {
     common: {
         icon_add:require("./images/icon_add.png"),
         icon_sub:require("./images/icon_sub.png"),
+        test_img:require("./images/test.png"),
     },
 }

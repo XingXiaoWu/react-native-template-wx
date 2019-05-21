@@ -16,7 +16,7 @@
  -----------------------------------------------------------------------------------------------
  </pre>
  ************************************************************************************************/
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
     StyleSheet,
     Text,
@@ -24,12 +24,14 @@ import {
     Image,
     TextInput
 } from 'react-native';
-import {CssAddButton, CssButton, CssSwitchButton, TextButton, Toast} from "../../component";
+import { CssAddButton, CssButton, CssSwitchButton, TextButton, Toast } from "../../component";
 import NavigationService from "../../navigation/NavigationService";
-import {inject} from "mobx-react/index";
-import {LoginModel} from "./model/LoginModel";
-import {toDipsHeight, toDipsWidth} from "../../utils/PixelRatioUtils";
-import {Native} from "../../native";
+import { inject } from "mobx-react/index";
+import { LoginModel } from "./model/LoginModel";
+import { toDipsHeight, toDipsWidth } from "../../utils/PixelRatioUtils";
+import { Native } from "../../native";
+import { ImageSources } from '../../res/ImageSources';
+import { FetchUntil } from '../../utils';
 
 @inject('userInfo')
 export class LoginView extends Component {
@@ -73,9 +75,10 @@ export class LoginView extends Component {
                     text={"去抖"}
                     width={100}
                     height={45}
-                    addNormalStyle={{backgroundColor:"red"}}
+                    addNormalStyle={{ backgroundColor: "red" }}
                     onPress={() => {
-                        console.log("打印去抖")
+                        // console.log("打印去抖")
+                        Native.navigate("loginDemo", "loginDemo")
                     }}
                 />
 
@@ -84,7 +87,7 @@ export class LoginView extends Component {
                     disabled={this.state.disabled}
                     width={100}
                     height={45}
-                    addNormalStyle={{backgroundColor:"red"}}
+                    addNormalStyle={{ backgroundColor: "red" }}
                     onPress={() => {
                         this.login()
                     }}
@@ -94,18 +97,36 @@ export class LoginView extends Component {
                     width={toDipsWidth(100)}
                     height={toDipsHeight(50)}
                     // backgroundColor={"red"}
-                    openClick={()=>{
+                    openClick={() => {
                         console.log("开了")
                     }}
-                    closeClick={()=>{
+                    closeClick={() => {
                         console.log("关了")
                     }}
                 />
 
                 {/*<CssAddButton/>*/}
 
+                <Image
+                    source={ImageSources.common.test_img}
+                />
+
+                <CssButton
+                    text={"点击下载"}
+                    // disabled={this.state.disabled}
+                    width={100}
+                    height={45}
+                    addNormalStyle={{ backgroundColor: "red" }}
+                    onPress={() => {
+                        this.download()
+                    }}
+                />
             </View>
         );
+    }
+
+    download(){
+        FetchUntil.downLoadBundle()
     }
 
 
