@@ -116,6 +116,11 @@ function replaceAppdelegate(){
     echo "替换完毕,删除待替换文件"
     rm -r newm=$1/iosReplace
     echo "删除成功"
+    # 3.替换appdelegate.m里的语句
+    target_sentence="replace"
+    replace_sentence="WXRNViewCtrl *ctrl = [[WXRNViewCtrl alloc]initWithModuleName:@\"$2\" fileName:@\"$2\"];"
+    sed -i "" "25s/$target_sentence/$replace_sentence/g" $oldm
+    # 替换完毕
 }
 
 #添加pod,

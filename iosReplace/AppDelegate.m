@@ -21,8 +21,8 @@
 
 - (void)setWindow{
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-  
-  WXRNViewCtrl *ctrl = [[WXRNViewCtrl alloc]initWithModuleName:@"baseDemo" fileName:@"baseDemo"];
+  // 标记位,脚本处理使用的
+  replace
   
   _nav = [[UINavigationController alloc]initWithRootViewController: ctrl];
   _nav.navigationBarHidden = YES;
