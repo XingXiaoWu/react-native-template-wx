@@ -37,6 +37,8 @@ export class App extends Component {
             <Provider {...index}>
 
                 <AppTopNav
+                // 抽成组件还有个好处,可以接受原生的传值,不至于被navigation的options覆盖
+                    screenProps={ this.props }
                     ref={(navigatorRef) => {
                         //TODO:如果需要,可以在这里注册顶层路由用于非页面的跳转
                         NavigationService.setTopLevelNavigator(navigatorRef);

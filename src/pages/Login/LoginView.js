@@ -37,6 +37,7 @@ import { FetchUntil } from '../../utils';
 export class LoginView extends Component {
     constructor(props) {
         super(props)
+        console.log(props)
         this.loginModel = new LoginModel()
         this.state = {
             username: null,
@@ -112,7 +113,7 @@ export class LoginView extends Component {
                 />
 
                 <CssButton
-                    text={"点击下载"}
+                    text={"点击下载bundle模块"}
                     // disabled={this.state.disabled}
                     width={100}
                     height={45}
@@ -125,8 +126,9 @@ export class LoginView extends Component {
         );
     }
 
-    download(){
-        FetchUntil.downLoadBundle()
+    download() {
+        let url = 'http://127.0.0.1:3000/loginDemo.jsbundle'
+        FetchUntil.downLoadBundle(url)
     }
 
 

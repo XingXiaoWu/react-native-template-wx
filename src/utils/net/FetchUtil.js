@@ -205,8 +205,7 @@ class Fetch {
 
 
     // 下载bundle文件的
-    downLoadBundle() {
-        let url = 'http://127.0.0.1:3000/loginDemo.jsbundle'
+    downLoadBundle(url) {
         let name = this.getFileName(url)
         let dirs = RNFetchBlob.fs.dirs.DocumentDir
         let path = dirs + "/" + name
@@ -233,6 +232,7 @@ class Fetch {
             })
             .then((res) => {
                 // the temp file path
+                Toast.showToast("下载完成")
                 console.log('The file saved to ', res.path())
             })
     }
@@ -272,13 +272,6 @@ class Fetch {
         }
     }
 
-
-    // webapp_work
-    // createFile(name){
-    //     let name = this.getFileName(url)
-    //     let dirs = RNFetchBlob.fs.dirs.DocumentDir
-        
-    // }
    /**
     * 
     * @param {*} url url
