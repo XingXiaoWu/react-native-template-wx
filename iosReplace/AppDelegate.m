@@ -14,12 +14,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  [self setWindow];
+  [self setInitWindow:launchOptions];
   [WXTools copyPackages];
   return YES;
 }
 
-- (void)setWindow{
+- (void)setInitWindow:(NSDictionary *)launchOptions{
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   // 标记位,脚本处理使用的
   replace

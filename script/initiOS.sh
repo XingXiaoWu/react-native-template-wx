@@ -51,7 +51,7 @@ function replaceAppdelegate(){
     echo "删除成功"
     # 3.替换appdelegate.m里的语句
     target_sentence="replace"
-    replace_sentence="WXRNViewCtrl *ctrl = [[WXRNViewCtrl alloc]initWithModuleName:@\"$2\" fileName:@\"$2\"];"
+    replace_sentence="WXRNViewCtrl *ctrl = [[WXRNViewCtrl alloc]initWithModuleName:@\"$2\" fileName:@\"$2\" params:launchOptions];"
     sed -i "" "25s/$target_sentence/$replace_sentence/g" $oldm
     # 替换完毕
 }
