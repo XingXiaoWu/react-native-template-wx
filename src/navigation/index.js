@@ -1,14 +1,14 @@
 /*************************************************************************************************
  * <pre>
- * @项目名称:   2.0.0
+ * @项目名称:   wqw
  * @版权所有:   csshotel (C) 2019
  *
  *
- * @类描述:    登录页路由
+ * @类描述:
  * @版本:         V2.0.0
  * @作者:         wuxing
  * @邮箱:         xing.wu@Ctrip.com
- * @创建时间:     2019-04-04 14:21
+ * @创建时间:     2019-05-23 13:28
  *
  * @修改记录：
  -----------------------------------------------------------------------------------------------
@@ -16,21 +16,16 @@
  -----------------------------------------------------------------------------------------------
  </pre>
  ************************************************************************************************/
-import React, {Component} from 'react';
-import {createStackNavigator} from "react-navigation";
-import {LoginView} from "../../pages/Login/LoginView";
-import {NavigationConfig} from "..";
-
-export let AppLoginNav = createStackNavigator({
-    LoginView: {
-        screen: LoginView,
-        navigationOptions: () => {
-            return {
-                headerTitle: "登录"
-            }
-        }
-    },
-}, {
-    initialRouteName: "LoginView",
-    defaultNavigationOptions:({screenProps})=>NavigationConfig.navConfig(screenProps)
-})
+import {AppRegist} from "./Regist/RegisterApp";
+import {AppLoginNav} from "./Regist/RegisterLogin";
+import {NavigationConfig,NavTheme} from "./NavigationConfig/NavigationConfig";
+import navigate from "./NavigationService"
+import NavigationService from "./NavigationService"
+export {
+    NavigationConfig,
+    AppRegist,
+    AppLoginNav,
+    navigate,
+    NavigationService,
+    NavTheme
+}

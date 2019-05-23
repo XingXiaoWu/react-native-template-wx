@@ -39,6 +39,7 @@ function npmlink(){
 #参数要求:1:workpath 2:targetName
 function replaceAppdelegate(){
     #1.定义新旧文件
+    #1.定义新旧文件
     newh=$1/iosReplace/AppDelegate.h
     newm=$1/iosReplace/AppDelegate.m
     oldh=$1/ios/$2/AppDelegate.h
@@ -47,8 +48,7 @@ function replaceAppdelegate(){
     cp $newh $oldh
     cp $newm $oldm
     echo "替换完毕,删除待替换文件"
-    rm -r newm=$1/iosReplace
-    echo "删除成功"
+    rm -r $1/iosReplace/
     # 3.替换appdelegate.m里的语句
     target_sentence="replace"
     replace_sentence="WXRNViewCtrl *ctrl = [[WXRNViewCtrl alloc]initWithModuleName:@\"$2\" fileName:@\"$2\" params:launchOptions];"

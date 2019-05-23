@@ -20,6 +20,9 @@ import React, {Component} from 'react';
 import {createBottomTabNavigator, createStackNavigator} from "react-navigation";
 import {HomeView} from "../../pages/Home/HomeView";
 import {MyView} from "../../pages/My/MyView";
+import {NavigationConfig} from "..";
+import {ImageSources} from "../../res";
+
 
 //首页
 let HomeNav = createStackNavigator({
@@ -31,6 +34,8 @@ let HomeNav = createStackNavigator({
             }
         }
     }
+},{
+    defaultNavigationOptions:({screenProps})=>NavigationConfig.navConfig(screenProps)
 })
 
 //我的
@@ -44,6 +49,8 @@ let MyNav = createStackNavigator({
             }
         }
     }
+},{
+    defaultNavigationOptions:({screenProps})=>NavigationConfig.navConfig(screenProps)
 })
 //定义一些icon
 
@@ -51,11 +58,11 @@ let MyNav = createStackNavigator({
 let AppTab = createBottomTabNavigator({
     HomeTab: {
         screen: HomeNav,
-        // navigationOptions: TabBarConfig.getTabOptions("首页", CHImageSource.TabIcon.icon_homeDe, CHImageSource.TabIcon.icon_homeSe)
+        navigationOptions:({navigation})=> NavigationConfig.tabConfig("首页",ImageSources.common.icon_add,ImageSources.common.icon_sub,navigation)
     },
     MyTab: {
         screen: MyNav,
-        //navigationOptions: TabBarConfig.getTabOptions("我的", CHImageSource.TabIcon.icon_myDe, CHImageSource.TabIcon.icon_mySe)
+        navigationOptions:({navigation})=> NavigationConfig.tabConfig("我的",ImageSources.common.icon_add,ImageSources.common.icon_sub,navigation)
     }
 }, {
     tabBarOptions: {
@@ -76,4 +83,5 @@ export let AppRegist = createStackNavigator({
 
 }, {
     initialRouteName: "AppTab",
+    defaultNavigationOptions:({screenProps})=>NavigationConfig.navConfig(screenProps)
 })

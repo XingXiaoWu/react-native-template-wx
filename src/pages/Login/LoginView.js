@@ -32,6 +32,7 @@ import { toDipsHeight, toDipsWidth } from "../../utils/PixelRatioUtils";
 import { Native } from "../../native";
 import { ImageSources } from '../../res/ImageSources';
 import { FetchUntil } from '../../utils';
+import {NavTheme} from "../../navigation";
 
 @inject('userInfo')
 export class LoginView extends Component {
@@ -94,6 +95,17 @@ export class LoginView extends Component {
                     }}
                 />
 
+
+                <CssButton
+                    text={"下一页"}
+                    width={100}
+                    height={45}
+                    addNormalStyle={{ backgroundColor: "red" }}
+                    onPress={() => {
+                        NavigationService.navigate("HomeView")
+                    }}
+                />
+
                 <CssSwitchButton
                     width={toDipsWidth(100)}
                     height={toDipsHeight(50)}
@@ -120,6 +132,27 @@ export class LoginView extends Component {
                     addNormalStyle={{ backgroundColor: "red" }}
                     onPress={() => {
                         this.download()
+                    }}
+                />
+
+                <CssButton
+                    text={"变黄"}
+                    width={100}
+                    height={45}
+                    addNormalStyle={{ backgroundColor: "red" }}
+                    onPress={() => {
+                        NavTheme.setTheme(NavTheme.Themes.yellow)
+                    }}
+                />
+
+                <CssButton
+                    text={"变红"}
+                    width={100}
+                    height={45}
+                    addNormalStyle={{ backgroundColor: "red" }}
+                    onPress={() => {
+                        // console.log("打印去抖")
+                        NavTheme.setTheme(NavTheme.Themes.red)
                     }}
                 />
             </View>

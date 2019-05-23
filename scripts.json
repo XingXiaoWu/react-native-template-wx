@@ -1,4 +1,4 @@
 {
     "iosbundle":"chmod 777 ./script/iosbundle.sh && ./script/iosbundle.sh",
-    "initios": "chmod 777 ./script/initiOS.sh && ./script/initiOS.sh"
+    "initios": "chmod 777 ./script/initiOS.sh && ./script/initios.sh"
 }
