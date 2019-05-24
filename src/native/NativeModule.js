@@ -17,23 +17,16 @@
  </pre>
  ************************************************************************************************/
 import {NativeModules, Platform, ToastAndroid} from "react-native";
+import {showLoading,showToast,dismissLoading} from "react-native-wx-bridge"
 
 export class Native {
 
     static showToast(message){
-        if (Platform.OS === 'ios'){
-            NativeModules.wxnative.showToast(message)
-        } else {
-            ToastAndroid.show(message)
-        }
+        showToast(message)
     }
 
     static showLoading(){
-        if (Platform.OS === 'ios'){
-            NativeModules.wxnative.showLoading()
-        } else {
-
-        }
+      showLoading()
     }
 
     //环形loading
@@ -46,11 +39,7 @@ export class Native {
     }
 
     static dismissLoading(){
-        if (Platform.OS === 'ios'){
-            NativeModules.wxnative.dismissLoading()
-        } else {
-            // ToastAndroid.show(message)
-        }
+        dismissLoading()
     }
 
     /**

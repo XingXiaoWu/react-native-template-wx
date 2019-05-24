@@ -6,6 +6,6 @@
     "react-dom": "^16.8.6",
     "react-native-gesture-handler": "^1.2.1",
     "react-navigation": "^3.9.1",
-    "react-native-wx-bridge": "^0.0.10",
+    "react-native-wx-bridge": "^0.0.11",
     "rn-fetch-blob": "^0.10.15"
 }
