@@ -28,7 +28,7 @@ node,react-native-cli,cocoapods,xcode,Android Studio
 react-native init 项目名 --template wx
 ```
 
-2.新建的项目中会有个scripts.json,请将里面的命令复制到package.json的scriptsk代码块中
+2.新建的项目中会有个scripts.json,请将里面的命令复制到package.json的scripts代码块中
 
 3.执行命令
 ```
