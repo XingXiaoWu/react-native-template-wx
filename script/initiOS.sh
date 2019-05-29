@@ -110,17 +110,17 @@ function addPod(){
 
 
 
-echo "1.获取当前项目路径"
+#echo "1.获取当前项目路径"
 getPath
-echo "获取成功,路径$workpath"
+#echo "获取成功,路径$workpath"
 # targetName=${workpath##*/}
 getTargetName $workpath
-echo "2.当前项目名称:$targetName"
-echo "3.准备link项目"
+#echo "2.当前项目名称:$targetName"
+#echo "3.准备link项目"
 npmlink
-echo "link完毕,理论上没报错"
+#echo "link完毕,理论上没报错"
 echo "4.替换ios的启动文件"
 replaceAppdelegate $workpath $targetName
-echo "5.给ios加pod"
-addPod  $workpath $targetName
+#echo "5.给ios加pod"
+#addPod  $workpath $targetName
 echo "执行完毕,打开ios项目启动看下"
