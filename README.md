@@ -22,6 +22,8 @@
 安装好
 node,react-native-cli,cocoapods,xcode,Android Studio
 
+## 使用方法
+
 ### 新建项目
 1.新建项目
 ```
@@ -33,7 +35,7 @@ react-native init 项目名 --template wx
 3.执行命令
 ```
 cd 项目根目录下
-npm run initios
+npm run init
 ```
 
 ### iOS
