@@ -16,13 +16,13 @@
  -----------------------------------------------------------------------------------------------
  </pre>
  ************************************************************************************************/
-import React, {Component} from 'react';
-import {createBottomTabNavigator, createStackNavigator} from "react-navigation";
-import {HomeView} from "../../pages/Home/HomeView";
-import {MyView} from "../../pages/My/MyView";
-import {NavigationConfig} from "..";
-import {ImageSources} from "../../res";
-
+import React, { Component } from 'react';
+import { createBottomTabNavigator, createStackNavigator } from "react-navigation";
+import { HomeView } from "../../pages/Home/HomeView";
+import { MyView } from "../../pages/My/MyView";
+import { NavigationConfig } from "..";
+import { ImageSources } from "../../res";
+import { EchartView } from "../../pages/EchartView/EchartView"
 
 //首页
 let HomeNav = createStackNavigator({
@@ -34,13 +34,13 @@ let HomeNav = createStackNavigator({
             }
         }
     }
-},{
-    defaultNavigationOptions:({screenProps})=>NavigationConfig.navConfig(screenProps)
-})
+}, {
+        defaultNavigationOptions: ({ screenProps }) => NavigationConfig.navConfig(screenProps)
+    })
 
 //我的
 let MyNav = createStackNavigator({
-//TODO:更正
+    //TODO:更正
     MyView: {
         screen: MyView,
         navigationOptions: () => {
@@ -49,26 +49,26 @@ let MyNav = createStackNavigator({
             }
         }
     }
-},{
-    defaultNavigationOptions:({screenProps})=>NavigationConfig.navConfig(screenProps)
-})
+}, {
+        defaultNavigationOptions: ({ screenProps }) => NavigationConfig.navConfig(screenProps)
+    })
 //定义一些icon
 
 // Tab定义
 let AppTab = createBottomTabNavigator({
     HomeTab: {
         screen: HomeNav,
-        navigationOptions:({navigation})=> NavigationConfig.tabConfig("首页",ImageSources.common.icon_add,ImageSources.common.icon_sub,navigation)
+        navigationOptions: ({ navigation }) => NavigationConfig.tabConfig("首页", ImageSources.common.icon_add, ImageSources.common.icon_sub, navigation)
     },
     MyTab: {
         screen: MyNav,
-        navigationOptions:({navigation})=> NavigationConfig.tabConfig("我的",ImageSources.common.icon_add,ImageSources.common.icon_sub,navigation)
+        navigationOptions: ({ navigation }) => NavigationConfig.tabConfig("我的", ImageSources.common.icon_add, ImageSources.common.icon_sub, navigation)
     }
 }, {
-    tabBarOptions: {
-        activeTintColor: '#3A55EE',
-    },
-})
+        tabBarOptions: {
+            activeTintColor: '#3A55EE',
+        },
+    })
 
 //导出可用路由
 export let AppRegist = createStackNavigator({
@@ -80,8 +80,16 @@ export let AppRegist = createStackNavigator({
             }
         }
     },
+    EchartView: {
+        screen: EchartView,
+        navigationOptions: () => {
+            return {
+                headerTitle: "EchartView"
+            }
+        }
+    }
 
 }, {
-    initialRouteName: "AppTab",
-    defaultNavigationOptions:({screenProps})=>NavigationConfig.navConfig(screenProps)
-})
+        initialRouteName: "AppTab",
+        defaultNavigationOptions: ({ screenProps }) => NavigationConfig.navConfig(screenProps)
+    })

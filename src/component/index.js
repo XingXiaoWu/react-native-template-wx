@@ -21,6 +21,7 @@ import {Toast} from "./Toast";
 import {CssButton} from "./Button/CssButton";
 import {CssSwitchButton} from "./Switch/CssSwitchButton";
 // import {CssAddButton} from "./Button/CssAddButton";
+import {Echart} from "./Echart/Echart"
 
 export {
     TextButton,
@@ -28,5 +29,5 @@ export {
     CssButton,
     CssSwitchButton,
     // CssAddButton
-
+    Echart
 }

@@ -16,18 +16,18 @@
  -----------------------------------------------------------------------------------------------
  </pre>
  ************************************************************************************************/
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
     StyleSheet,
     Text, TouchableOpacity,
     View, ViewPropTypes,
 } from 'react-native';
-import {TextButton} from "../../component/TextButton";
+import { TextButton } from "../../component/TextButton";
 import NavigationService from "../../navigation/NavigationService";
-import {inject, observer} from "mobx-react/index";
-import {Toast} from "../../component";
+import { inject, observer } from "mobx-react/index";
+import { Toast } from "../../component";
 import PropTypes from "prop-types";
-import {Permission} from "../../congfigs";
+import { Permission } from "../../congfigs";
 
 @inject('userInfo')
 @observer
@@ -43,7 +43,7 @@ export class HomeView extends Component {
     }
 
     render() {
-        let {userInfo} = this.props;
+        let { userInfo } = this.props;
         console.log("render了")
         return (
             <View style={HomeViewStyles.container}>
@@ -57,6 +57,17 @@ export class HomeView extends Component {
                         NavigationService.navigate("LoginView")
                     }}
                 />
+
+                <TextButton
+                    style={{
+                        backgroundColor: "gray",
+                    }}
+                    text={"点我跳去EchartView"}
+                    onPress={() => {
+                        NavigationService.navigate("EchartView")
+                    }}
+                />
+
                 <TextButton
                     style={{
                         backgroundColor: "gray",
@@ -64,7 +75,7 @@ export class HomeView extends Component {
                     text={"点我更改数据"}
                     onPress={() => {
                         userInfo.setUserName("123")
-                        userInfo.setAuthValue([0,1,2,3,4])
+                        userInfo.setAuthValue([0, 1, 2, 3, 4])
                     }}
                 />
                 <Text>用户名:{userInfo.userName}</Text>

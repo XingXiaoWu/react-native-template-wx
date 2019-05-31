@@ -1,3 +1,10 @@
+# 步骤:
+# 1.添加自己的依赖库
+# 2.link所有库
+# 3.替换appdelegate
+# 4.替换wkwebview
+# 5.pod待定
+
 #定义变量workpath标示当前脚本所处位置
 workpath="当前项目所处位置"
 targetName="当前项目名称"
@@ -21,11 +28,13 @@ function addBridge () {
 }
 
 getPath
-echo "1.获取当前项目路径,路径$workpath"
+echo "获取当前项目路径,路径$workpath"
 getTargetName $workpath
-echo "2.当前项目名称:$targetName"
-echo "3.添加依赖"
+echo "当前项目名称:$targetName"
+echo "添加bridge"
 addBridge
+echo "初始化ios"
 initios
-#echo "4.link添加依赖"
-#npmlink
+source $workpath/script/replaceFun.sh
+replaceWkWebView
+
