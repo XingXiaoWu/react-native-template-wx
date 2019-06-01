@@ -27,7 +27,7 @@ import { inject, observer } from "mobx-react/index";
 import { Toast } from "../../component";
 import PropTypes from "prop-types";
 import { Permission } from "../../congfigs";
-
+import {WxButton} from "../../component";
 @inject('userInfo')
 @observer
 export class HomeView extends Component {
@@ -47,7 +47,7 @@ export class HomeView extends Component {
         return (
             <View style={HomeViewStyles.container}>
                 <Text>HomeView</Text>
-                <TextButton
+                <WxButton
                     style={{
                         backgroundColor: "gray",
                     }}
@@ -57,7 +57,7 @@ export class HomeView extends Component {
                     }}
                 />
 
-                <TextButton
+                <WxButton
                     style={{
                         backgroundColor: "gray",
                     }}
@@ -67,7 +67,7 @@ export class HomeView extends Component {
                     }}
                 />
 
-                <TextButton
+                <WxButton
                     style={{
                         backgroundColor: "gray",
                     }}

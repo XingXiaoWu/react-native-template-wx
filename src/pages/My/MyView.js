@@ -25,6 +25,7 @@ import {
 } from 'react-native';
 import NavigationService from "../../navigation/NavigationService";
 import {inject, observer} from "mobx-react/index";
+import {WxButton} from "../../component";
 
 @inject('userInfo')
 @observer
@@ -44,7 +45,7 @@ export class MyView extends Component {
         return (
             <View style={MyViewStyles.container}>
                 <Text>MyView</Text>
-                <TextButton
+                <WxButton
                     text={"点我跳转回登录"}
                     onPress={()=>{
                         NavigationService.navigate("LoginView")
@@ -52,7 +53,7 @@ export class MyView extends Component {
                 />
                 <Text>用户名:{this.userInfo.userName}</Text>
 
-                <TextButton
+                <WxButton
                     text={"点击用户名改为无星"}
                     onPress={()=>{
                         this.userInfo.setUserName("无星")

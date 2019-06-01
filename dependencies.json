@@ -8,5 +8,5 @@
     "react-navigation": "^3.9.1",
     "react-native-webview": "^5.10.0",
     "rn-fetch-blob": "^0.10.15",
-    "react-native-wxtip": "^0.0.2",
+    "react-native-wxtip": "^0.0.2"
 }
