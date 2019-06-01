@@ -8,7 +8,7 @@
  * @版本:
  * @作者:         wuxing
  * @邮箱:         329106954@qq.com
- * @创建时间:     2019-04-22 13:26
+ * @创建时间:     2019-04-29 16:17
  *
  * @修改记录：
  -----------------------------------------------------------------------------------------------
@@ -16,10 +16,13 @@
  -----------------------------------------------------------------------------------------------
  </pre>
  ************************************************************************************************/
-import {UserInfo} from "./sotre/UserInfo";
+import {WXTip} from "react-native-wxtip"
+export class Loading {
+    static showLoading(){
+        WXTip.showLoading()
+    }
 
-const index = {
-    userInfo: new UserInfo()
+    static dismissLoading(){
+        WXTip.dismissLoading()
+    }
 }
-
-export default index

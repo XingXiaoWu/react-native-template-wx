@@ -1,13 +1,13 @@
 /*************************************************************************************************
  * <pre>
- * @项目名称:   CssTest
- * @版权所有:   csshotel (C) 2019
+ * @项目名称:   react-native-template-wx
+ * @版权所有:   wuxing (C) 2019
  *
  *
  * @类描述:
- * @版本:         V2.0.0
+ * @版本:
  * @作者:         wuxing
- * @邮箱:         xing.wu@Ctrip.com
+ * @邮箱:         329106954@qq.com
  * @创建时间:     2019-04-29 18:23
  *
  * @修改记录：
@@ -19,10 +19,8 @@
 
 import React from "react";
 import fetch from "./FetchBase";
-import { Toast } from "../../component";
-import { Native } from "../../native";
+import { Toast,Loading} from "../../component";
 import RNFetchBlob from 'rn-fetch-blob'
-import { file } from "@babel/types";
 
 class Fetch {
     //网络超时时间(毫秒)
@@ -86,7 +84,7 @@ class Fetch {
 
         //进行网络请求,科里化操作
         return new Promise((resolve, reject) => {
-            Native.showLoading()
+            Loading.showLoading()
             fetch(url, {
                 method: 'GET',
                 headers: headers,
@@ -113,7 +111,7 @@ class Fetch {
                     reject(error.response)
                 })
                 .finally(() => {
-                    Native.dismissLoading()
+                    Loading.dismissLoading()
                 })
         })
     }
@@ -124,7 +122,7 @@ class Fetch {
 
         //进行网络请求,科里化操作
         return new Promise((resolve, reject) => {
-            Native.showLoading()
+            Loading.showLoading()
             fetch(url, {
                 method: 'POST',
                 headers: headers,
@@ -152,7 +150,7 @@ class Fetch {
                     reject(error.response)
                 })
                 .finally(() => {
-                    Native.dismissLoading()
+                    Loading.dismissLoading()
                 })
         })
     }
@@ -170,7 +168,7 @@ class Fetch {
 
         //进行网络请求,科里化操作
         return new Promise((resolve, reject) => {
-            Native.showLoading()
+            Loading.showLoading()
             fetch(url, {
                 method: 'POST',
                 headers: this.headForm,
@@ -198,7 +196,7 @@ class Fetch {
                     reject(error.response)
                 })
                 .finally(() => {
-                    Native.dismissLoading()
+                    Loading.dismissLoading()
                 })
         })
     }

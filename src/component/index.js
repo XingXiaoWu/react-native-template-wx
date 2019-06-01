@@ -1,13 +1,13 @@
 /*************************************************************************************************
  * <pre>
- * @项目名称:   CssTest
- * @版权所有:   csshotel (C) 2019
+ * @项目名称:   react-native-template-wx
+ * @版权所有:   wuxing (C) 2019
  *
  *
  * @类描述:    Component的导出类
- * @版本:         V2.0.0
+ * @版本:
  * @作者:         wuxing
- * @邮箱:         xing.wu@Ctrip.com
+ * @邮箱:         329106954@qq.com
  * @创建时间:     2019-04-29 15:20
  *
  * @修改记录：
@@ -16,18 +16,17 @@
  -----------------------------------------------------------------------------------------------
  </pre>
  ************************************************************************************************/
-import {TextButton} from "./TextButton";
 import {Toast} from "./Toast";
-import {CssButton} from "./Button/CssButton";
+import {WxButton} from "./Button/WxButton";
 import {CssSwitchButton} from "./Switch/CssSwitchButton";
-// import {CssAddButton} from "./Button/CssAddButton";
-import {Echart} from "./Echart/Echart"
+import {WxEchart} from "./Echart/WxEchart"
+import {Loading} from "./Loading";
 
 export {
-    TextButton,
     Toast,
-    CssButton,
+    WxButton,
     CssSwitchButton,
-    // CssAddButton
-    Echart
+    // WxAddButton
+    WxEchart,
+    Loading
 }

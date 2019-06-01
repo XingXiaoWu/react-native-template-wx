@@ -1,13 +1,13 @@
 /*************************************************************************************************
  * <pre>
- * @项目名称:   Test
- * @版权所有:   csshotel (C) 2019
+ * @项目名称:   react-native-template-wx
+ * @版权所有:   wuxing (C) 2019
  *
  *
  * @类描述:
- * @版本:         V2.0.0
+ * @版本:
  * @作者:         wuxing
- * @邮箱:         xing.wu@Ctrip.com
+ * @邮箱:         329106954@qq.com
  * @创建时间:     2019-04-18 18:48
  *
  * @修改记录：
@@ -24,7 +24,6 @@ import {
     Image,
 } from 'react-native';
 import NavigationService from "../../navigation/NavigationService";
-import {TextButton} from "../../component/TextButton";
 import {inject, observer} from "mobx-react/index";
 
 @inject('userInfo')

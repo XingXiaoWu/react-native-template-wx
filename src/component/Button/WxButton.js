@@ -1,13 +1,13 @@
 /*************************************************************************************************
  * <pre>
- * @项目名称:   CssTest
- * @版权所有:   csshotel (C) 2019
+ * @项目名称:   react-native-template-wx
+ * @版权所有:   wuxing (C) 2019
  *
  *
- * @类描述:
- * @版本:         V2.0.0
+ * @类描述:    带去抖的button
+ * @版本:
  * @作者:         wuxing
- * @邮箱:         xing.wu@Ctrip.com
+ * @邮箱:         329106954@qq.com
  * @创建时间:     2019-05-06 10:44
  *
  * @修改记录：
@@ -28,7 +28,7 @@ import {
 import PropTypes from 'prop-types';
 import {toDips, toDipsHeight, toDipsWidth} from "../../utils/PixelRatioUtils";
 
-let CssButtonStyles = StyleSheet.create({
+let WxButtonStyles = StyleSheet.create({
     container: {
         flex: 1,
     },
@@ -55,7 +55,7 @@ let CssButtonStyles = StyleSheet.create({
     }
 });
 
-export class CssButton extends Component {
+export class WxButton extends Component {
 
     static propTypes = {
         normalStyle: ViewPropTypes.style,    //按钮默认样式
@@ -71,11 +71,11 @@ export class CssButton extends Component {
     }
 
     static defaultProps = {
-        normalStyle: CssButtonStyles.defaultNormalStyle,    //按钮默认样式
-        disableStyle: CssButtonStyles.defaultDisableStyle,   //按钮补课点击样式
+        normalStyle: WxButtonStyles.defaultNormalStyle,    //按钮默认样式
+        disableStyle: WxButtonStyles.defaultDisableStyle,   //按钮补课点击样式
         text: "",  //按钮的字
-        normalTextStyle: CssButtonStyles.defaultNormalTextStyle,     //字体样式
-        disableTextStyle: CssButtonStyles.defaultDisableTextStyle,     //字体样式
+        normalTextStyle: WxButtonStyles.defaultNormalTextStyle,     //字体样式
+        disableTextStyle: WxButtonStyles.defaultDisableTextStyle,     //字体样式
         disabled: false,           //是否可点击
         width: toDipsWidth(345),
         height: toDipsHeight(45),
@@ -86,6 +86,11 @@ export class CssButton extends Component {
         super(props)
         //    新建一个定时器用于去抖节流使用
         this.debounceTimer = null
+        //    以下变量用于节流
+        //节流等待时长
+        this.waitTime = 250
+        //    上一次执行的时间
+        this.previous = 0
     }
 
     componentDidMount() {
@@ -129,10 +134,25 @@ export class CssButton extends Component {
         }
         this.debounceTimer = setTimeout(() => {
             callBack()
-        }, 200)
+        }, 250)
     }
 
-
-//    添加节流
-
+    //节流,判断时间是否达到设置阈值
+    throttle(callBack) {
+        //获取当前毫秒数
+        let now = new Date().getMilliseconds();
+        //    如果上一次不存在,本次直接执行
+        //    如果当前时间已经大于上次时间+等待时间
+        if (!this.previous || now >= this.previous + this.waitTime) {
+            this.previous = now
+        }
+        //判断是否相等
+        if (this.previous === now) {
+            callBack()
+        } else {
+            //todo,做一些业务需要的自定义操作
+            //当前什么都不做
+            console.log("节流中...请稍后点击...")
+        }
+    }
 }

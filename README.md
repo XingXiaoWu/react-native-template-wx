@@ -18,6 +18,8 @@
 
 7.iOS原生工程做了改动 支持不同rn分开打包加载,并可以通过fetch-blob下载(意思就是可以把bundle放在服务端,直接下载加载在打包好的ipa包,可以理解为一个简约的热更新)
 
+8.新增Echart组件
+
 ## 预备工作
 安装好
 node,react-native-cli,cocoapods,xcode,Android Studio

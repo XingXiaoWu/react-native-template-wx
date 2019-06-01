@@ -1,14 +1,14 @@
 
 /*************************************************************************************************
  * <pre>
- * @项目名称:   Echart
- * @版权所有:   csshotel (C) 2019
+ * @项目名称:   react-native-template-wx
+ * @版权所有:   wuxing (C) 2019
  *
  *
  * @类描述:
- * @版本:         V2.0.0
+ * @版本:
  * @作者:         wuxing
- * @邮箱:         xing.wu@Ctrip.com
+ * @邮箱:         329106954@qq.com
  * @创建时间:     2019-05-30 18:42
  *
  * @修改记录：
@@ -31,7 +31,7 @@ import {WebView} from "react-native-webview";
 let htmlAndroid = {uri: 'file:///android_asset/draw/stamp_new.html'};
 let htmlIOS = require('./index.html');
 
-export class Echart extends Component {
+export class WxEchart extends Component {
 
     static propTypes = {
         option: PropTypes.object,

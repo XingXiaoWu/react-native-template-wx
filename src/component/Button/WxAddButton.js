@@ -1,13 +1,13 @@
 /*************************************************************************************************
  * <pre>
- * @项目名称:   CssTest
- * @版权所有:   csshotel (C) 2019
+ * @项目名称:   react-native-template-wx
+ * @版权所有:   wuxing (C) 2019
  *
  *
  * @类描述:
- * @版本:         V2.0.0
+ * @版本:
  * @作者:         wuxing
- * @邮箱:         xing.wu@Ctrip.com
+ * @邮箱:         329106954@qq.com
  * @创建时间:     2019-05-07 10:37
  *
  * @修改记录：
@@ -29,17 +29,17 @@ import PropTypes from 'prop-types';
 import {toDips, toDipsHeight, toDipsWidth} from "../../utils/PixelRatioUtils";
 
 
-let CssAddButtonStyles = StyleSheet.create({
+let WxAddButtonStyles = StyleSheet.create({
     container: {
         flex: 1,
     },
     touchStyle: {
-        width:toDipsWidth(40),
-        backgroundColor:"blue",
+        width: toDipsWidth(40),
+        backgroundColor: "blue",
         // justifyContent:"center",
-        alignItems:"center",
-        justifyContent:"center",
-        padding:toDips(10)
+        alignItems: "center",
+        justifyContent: "center",
+        padding: toDips(10)
 
     },
     textStyle: {
@@ -48,7 +48,7 @@ let CssAddButtonStyles = StyleSheet.create({
     }
 });
 
-export class CssAddButton extends PureComponent {
+export class WxAddButton extends PureComponent {
 
     static propTypes = {
         onPress: PropTypes.func,
@@ -57,8 +57,8 @@ export class CssAddButton extends PureComponent {
     }
 
     static defaultProps = {
-        touchStyle: CssAddButtonStyles.touchStyle,
-        textStyle: CssAddButtonStyles.textStyle
+        touchStyle: WxAddButtonStyles.touchStyle,
+        textStyle: WxAddButtonStyles.textStyle
     }
 
     constructor(props) {
@@ -76,8 +76,8 @@ export class CssAddButton extends PureComponent {
             >
                 <Text
                     style={[this.props.textStyle]}
-                >1</Text>
+                > 1 </Text>
             </TouchableOpacity>
-        );
+        )
     }
 }
