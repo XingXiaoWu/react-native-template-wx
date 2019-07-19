@@ -24,7 +24,7 @@ import {
     Image,
 } from 'react-native';
 import NavigationService from "../../navigation/NavigationService";
-import {CssButton} from "react-native-csshotel-component";
+import {WXButtonText} from "react-native-wx-component";
 import {inject, observer} from "mobx-react/index";
 
 @inject('userInfo')
@@ -45,7 +45,7 @@ export class MyView extends Component {
         return (
             <View style={MyViewStyles.container}>
                 <Text>MyView</Text>
-                <CssButton
+                <WXButtonText
                     text={"点我跳转回登录"}
                     onPress={()=>{
                         NavigationService.navigate("LoginView")
@@ -53,7 +53,7 @@ export class MyView extends Component {
                 />
                 <Text>用户名:{this.userInfo.userName}</Text>
 
-                <CssButton
+                <WXButtonText
                     text={"点击用户名改为无星"}
                     onPress={()=>{
                         this.userInfo.setUserName("无星")

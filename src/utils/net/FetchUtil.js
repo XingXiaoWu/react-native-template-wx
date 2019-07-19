@@ -19,7 +19,7 @@
 
 import React from "react";
 import fetch from "./FetchBase";
-import { Toast } from "react-native-csshotel-component";
+import { WXToast } from "react-native-wx-component";
 import { Native } from "../../native";
 import RNFetchBlob from 'rn-fetch-blob'
 import { file } from "@babel/types";
@@ -109,7 +109,7 @@ class Fetch {
                     resolve(result)
                 })
                 .catch((error) => {
-                    Toast.showToast(error.message)
+                    WXToast.showToast(error.message)
                     reject(error.response)
                 })
                 .finally(() => {
@@ -148,7 +148,7 @@ class Fetch {
                     resolve(result)
                 })
                 .catch((error) => {
-                    Toast.showToast(error.message)
+                    WXToast.showToast(error.message)
                     reject(error.response)
                 })
                 .finally(() => {
@@ -194,7 +194,7 @@ class Fetch {
                     resolve(result)
                 })
                 .catch((error) => {
-                    Toast.showToast(error.message)
+                    WXToast.showToast(error.message)
                     reject(error.response)
                 })
                 .finally(() => {
@@ -232,7 +232,7 @@ class Fetch {
             })
             .then((res) => {
                 // the temp file path
-                Toast.showToast("下载完成")
+                WXToast.showToast("下载完成")
                 console.log('The file saved to ', res.path())
             })
     }

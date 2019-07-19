@@ -8,7 +8,7 @@
 
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
-import { Echart } from "react-native-csshotel-component"
+import { WXEchart } from "react-native-wx-component"
 
 export class EchartView extends Component{
 
@@ -57,7 +57,7 @@ export class EchartView extends Component{
     //效果
     render() {
         return (
-            <Echart
+            <WXEchart
                 style={{ flex: 1 }}
                 option={this.state.option1}
             />

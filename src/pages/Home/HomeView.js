@@ -22,10 +22,10 @@ import {
     Text, TouchableOpacity,
     View, ViewPropTypes,
 } from 'react-native';
-import { CssButton } from "react-native-csshotel-component";
+import { WXButtonText } from "react-native-wx-component";
 import NavigationService from "../../navigation/NavigationService";
 import { inject, observer } from "mobx-react/index";
-import { Toast } from "react-native-csshotel-component";
+import { WXToast } from "react-native-wx-component";
 import PropTypes from "prop-types";
 import { Permission } from "../../congfigs";
 
@@ -48,7 +48,7 @@ export class HomeView extends Component {
         return (
             <View style={HomeViewStyles.container}>
                 <Text>HomeView</Text>
-                <CssButton
+                <WXButtonText
                     style={{
                         backgroundColor: "gray",
                     }}
@@ -58,7 +58,7 @@ export class HomeView extends Component {
                     }}
                 />
 
-                <CssButton
+                <WXButtonText
                     style={{
                         backgroundColor: "gray",
                     }}
@@ -68,7 +68,7 @@ export class HomeView extends Component {
                     }}
                 />
 
-                <CssButton
+                <WXButtonText
                     style={{
                         backgroundColor: "gray",
                     }}
@@ -85,7 +85,7 @@ export class HomeView extends Component {
                         modelTip={"查看房间"}
                         permission={Permission.readRoom}
                         onPress={() => {
-                            Toast.showToast("有权限")
+                            WXToast.showToast("有权限")
                         }}
                     />
 
@@ -94,7 +94,7 @@ export class HomeView extends Component {
                         modelTip={"设置房间"}
                         permission={Permission.setRoom}
                         onPress={() => {
-                            Toast.showToast("有权限")
+                            WXToast.showToast("有权限")
                         }}
                     />
 
@@ -103,7 +103,7 @@ export class HomeView extends Component {
                         modelTip={"支付账单"}
                         permission={Permission.payOrder}
                         onPress={() => {
-                            Toast.showToast("有权限")
+                            WXToast.showToast("有权限")
                         }}
                     />
 
@@ -112,7 +112,7 @@ export class HomeView extends Component {
                         modelTip={"账号管理"}
                         permission={Permission.manageAccount}
                         onPress={() => {
-                            Toast.showToast("有权限")
+                            WXToast.showToast("有权限")
                         }}
                     />
 
@@ -121,7 +121,7 @@ export class HomeView extends Component {
                         modelTip={"房间管理"}
                         permission={Permission.manageRoom}
                         onPress={() => {
-                            Toast.showToast("有权限")
+                            WXToast.showToast("有权限")
                         }}
                     />
                 </View>
@@ -169,7 +169,7 @@ class ModelComponent extends Component {
                     if (this.hasPermission(this.props.permission)) {
                         this.props.onPress()
                     } else {
-                        Toast.showToast(this.props.clickTip)
+                        WXToast.showToast(this.props.clickTip)
                     }
                 }}
                 style={

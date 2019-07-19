@@ -24,7 +24,7 @@ import {
     Image,
     TextInput
 } from 'react-native';
-import { CssButton, CssSwitchButton, Toast,toDips,toDipsWidth,toDipsHeight } from "react-native-csshotel-component";
+import { WXButtonText, WXSwitchButton,toDips,toDipsWidth,toDipsHeight } from "react-native-wx-component";
 import NavigationService from "../../navigation/NavigationService";
 import { inject } from "mobx-react/index";
 import { LoginModel } from "./model/LoginModel";
@@ -72,7 +72,7 @@ export class LoginView extends Component {
                     placeholder="账号"
                 />
 
-                <CssButton
+                <WXButtonText
                     text={"去抖"}
                     width={100}
                     height={45}
@@ -83,7 +83,7 @@ export class LoginView extends Component {
                     }}
                 />
 
-                <CssButton
+                <WXButtonText
                     text={"登录"}
                     disabled={this.state.disabled}
                     width={100}
@@ -95,7 +95,7 @@ export class LoginView extends Component {
                 />
 
 
-                <CssButton
+                <WXButtonText
                     text={"下一页"}
                     width={100}
                     height={45}
@@ -105,7 +105,7 @@ export class LoginView extends Component {
                     }}
                 />
 
-                <CssSwitchButton
+                <WXSwitchButton
                     width={toDipsWidth(100)}
                     height={toDipsHeight(50)}
                     // backgroundColor={"red"}
@@ -123,7 +123,7 @@ export class LoginView extends Component {
                     source={ImageSources.common.test_img}
                 />
 
-                <CssButton
+                <WXButtonText
                     text={"点击下载bundle模块"}
                     // disabled={this.state.disabled}
                     width={100}
@@ -134,7 +134,7 @@ export class LoginView extends Component {
                     }}
                 />
 
-                <CssButton
+                <WXButtonText
                     text={"变黄"}
                     width={100}
                     height={45}
@@ -144,7 +144,7 @@ export class LoginView extends Component {
                     }}
                 />
 
-                <CssButton
+                <WXButtonText
                     text={"变红"}
                     width={100}
                     height={45}

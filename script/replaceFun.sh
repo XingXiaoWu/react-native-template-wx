@@ -123,8 +123,8 @@ function replacePod() {
     lf=$'\n'
     # ; echo 'foo bar' | sed "s/ /\\$lf/g"
     #从30行开始插入
-    sentence="pod 'RNCshBridge', :path => '../node_modules/react-native-csh-bridge/ios/RNCshBridge.podspec'"
-    sentence1="pod 'RNCsshotelComponent', :path => '../node_modules/react-native-csshotel-component/ios/RNCsshotelComponent.podspec'"
+    sentence="pod 'RNWxBridge', :path => '../node_modules/react-native-wx-bridge/ios/RNWxBridge.podspec'"
+    sentence1="pod 'RNWxComponent', :path => '../node_modules/react-native-wx-component/ios/RNWxComponent.podspec'"
     sentence2="pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient/BVLinearGradient.podspec'"
     sentence3="pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage/RNCAsyncStorage.podspec'"
     sentence4="pod 'RNGestureHandler',:path => '../node_modules/react-native-gesture-handler/RNGestureHandler.podspec'"
@@ -151,7 +151,7 @@ function replaceAppdelegate(){
     rm -r $1/iosReplace/
     # 3.替换appdelegate.m里的语句
     target_sentence="replace"
-    replace_sentence="CsViewCtrl *ctrl = [[CsViewCtrl alloc]initWithModuleName:@\"$2\" fileName:@\"$2\" params:launchOptions];"
+    replace_sentence="WXRNViewCtrl *ctrl = [[WXRNViewCtrl alloc]initWithModuleName:@\"$2\" fileName:@\"$2\" params:launchOptions];"
     sed -i "" "25s/$target_sentence/$replace_sentence/g" $oldm
     # 替换完毕
 }

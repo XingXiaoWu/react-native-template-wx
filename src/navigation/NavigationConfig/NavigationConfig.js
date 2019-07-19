@@ -18,7 +18,7 @@
  ************************************************************************************************/
 import React from "react";
 import {View, Text, TouchableOpacity} from "react-native"
-import {toDips, toDipsHeight, toDipsWidth} from "react-native-csshotel-component";
+import {toDips, toDipsHeight, toDipsWidth} from "react-native-wx-component";
 import {Image} from "react-native"
 import {action, computed, observable} from "mobx"
 

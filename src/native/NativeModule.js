@@ -17,20 +17,20 @@
  </pre>
  ************************************************************************************************/
 import {Platform,} from "react-native";
-import {navigate,popViewCtrl} from "react-native-csh-bridge"
-import {Toast,Loading} from "react-native-csshotel-component"
+import {navigate,popViewCtrl} from "react-native-wx-bridge"
+import {WXToast,WXLoading} from "react-native-wx-component"
 export class Native {
 
     static showToast(message){
-        Toast.showToast(message)
+        WXToast.showToast(message)
     }
 
     static showLoading(){
-        Loading.showLoading()
+        WXLoading.showLoading()
     }
 
     static dismissLoading(){
-        Loading.dismissLoading()
+        WXLoading.dismissLoading()
     }
 
     /**

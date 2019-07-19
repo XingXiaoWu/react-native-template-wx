@@ -20,8 +20,8 @@ function getTargetName(){
 
 #初始化rn项目
 function initreactnative () {
-    yarn add react-native-csh-bridge
-    yarn add react-native-csshotel-component
+    yarn add react-native-wx-bridge
+    yarn add react-native-wx-component
 }
 
 #初始化ios
