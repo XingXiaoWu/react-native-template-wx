@@ -1,6 +1,6 @@
 /*************************************************************************************************
  * <pre>
- * @项目名称:   Test
+ * @项目名称:   react-native-template-wx
  * @版权所有:   wuxing (C) 2019
  *
  *
@@ -24,7 +24,7 @@ import {
     Image,
 } from 'react-native';
 import NavigationService from "../../navigation/NavigationService";
-import {WXButtonText} from "react-native-wx-component";
+import {WXTextButton} from "react-native-wx-component";
 import {inject, observer} from "mobx-react/index";
 
 @inject('userInfo')
@@ -45,7 +45,7 @@ export class MyView extends Component {
         return (
             <View style={MyViewStyles.container}>
                 <Text>MyView</Text>
-                <WXButtonText
+                <WXTextButton
                     text={"点我跳转回登录"}
                     onPress={()=>{
                         NavigationService.navigate("LoginView")
@@ -53,7 +53,7 @@ export class MyView extends Component {
                 />
                 <Text>用户名:{this.userInfo.userName}</Text>
 
-                <WXButtonText
+                <WXTextButton
                     text={"点击用户名改为无星"}
                     onPress={()=>{
                         this.userInfo.setUserName("无星")

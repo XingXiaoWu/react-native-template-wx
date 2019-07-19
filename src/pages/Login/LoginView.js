@@ -1,6 +1,6 @@
 /*************************************************************************************************
  * <pre>
- * @项目名称:   Test
+ * @项目名称:   react-native-template-wx
  * @版权所有:   wuxing (C) 2019
  *
  *
@@ -24,14 +24,14 @@ import {
     Image,
     TextInput
 } from 'react-native';
-import { WXButtonText, WXSwitchButton,toDips,toDipsWidth,toDipsHeight } from "react-native-wx-component";
+import { WXTextButton, WXSwitchButton, toDips, toDipsWidth, toDipsHeight } from "react-native-wx-component";
 import NavigationService from "../../navigation/NavigationService";
 import { inject } from "mobx-react/index";
 import { LoginModel } from "./model/LoginModel";
 import { Native } from "../../native";
 import { ImageSources } from '../../res/ImageSources';
 import { FetchUntil } from '../../utils';
-import {NavTheme} from "../../navigation";
+import { NavTheme } from "../../navigation";
 
 @inject('userInfo')
 export class LoginView extends Component {
@@ -49,6 +49,9 @@ export class LoginView extends Component {
 
     }
 
+    render1() {
+        return (<View />)
+    }
     render() {
         return (
             <View style={LoginViewStyles.container}>
@@ -72,7 +75,7 @@ export class LoginView extends Component {
                     placeholder="账号"
                 />
 
-                <WXButtonText
+                <WXTextButton
                     text={"去抖"}
                     width={100}
                     height={45}
@@ -83,7 +86,7 @@ export class LoginView extends Component {
                     }}
                 />
 
-                <WXButtonText
+                <WXTextButton
                     text={"登录"}
                     disabled={this.state.disabled}
                     width={100}
@@ -95,7 +98,7 @@ export class LoginView extends Component {
                 />
 
 
-                <WXButtonText
+                <WXTextButton
                     text={"下一页"}
                     width={100}
                     height={45}
@@ -123,7 +126,7 @@ export class LoginView extends Component {
                     source={ImageSources.common.test_img}
                 />
 
-                <WXButtonText
+                <WXTextButton
                     text={"点击下载bundle模块"}
                     // disabled={this.state.disabled}
                     width={100}
@@ -134,7 +137,7 @@ export class LoginView extends Component {
                     }}
                 />
 
-                <WXButtonText
+                <WXTextButton
                     text={"变黄"}
                     width={100}
                     height={45}
@@ -144,7 +147,7 @@ export class LoginView extends Component {
                     }}
                 />
 
-                <WXButtonText
+                <WXTextButton
                     text={"变红"}
                     width={100}
                     height={45}
