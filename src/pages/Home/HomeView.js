@@ -1,11 +1,11 @@
 /*************************************************************************************************
  * <pre>
- * @项目名称:   react-native-template-wx
+ * @项目名称:   Test
  * @版权所有:   wuxing (C) 2019
  *
  *
  * @类描述:
- * @版本:
+ * @版本:         V2.0.0
  * @作者:         wuxing
  * @邮箱:         329106954@qq.com
  * @创建时间:     2019-04-18 18:48
@@ -22,12 +22,13 @@ import {
     Text, TouchableOpacity,
     View, ViewPropTypes,
 } from 'react-native';
+import { CssButton } from "react-native-csshotel-component";
 import NavigationService from "../../navigation/NavigationService";
 import { inject, observer } from "mobx-react/index";
-import { Toast } from "../../component";
+import { Toast } from "react-native-csshotel-component";
 import PropTypes from "prop-types";
 import { Permission } from "../../congfigs";
-import {WxButton} from "../../component";
+
 @inject('userInfo')
 @observer
 export class HomeView extends Component {
@@ -47,7 +48,7 @@ export class HomeView extends Component {
         return (
             <View style={HomeViewStyles.container}>
                 <Text>HomeView</Text>
-                <WxButton
+                <CssButton
                     style={{
                         backgroundColor: "gray",
                     }}
@@ -57,7 +58,7 @@ export class HomeView extends Component {
                     }}
                 />
 
-                <WxButton
+                <CssButton
                     style={{
                         backgroundColor: "gray",
                     }}
@@ -67,7 +68,7 @@ export class HomeView extends Component {
                     }}
                 />
 
-                <WxButton
+                <CssButton
                     style={{
                         backgroundColor: "gray",
                     }}

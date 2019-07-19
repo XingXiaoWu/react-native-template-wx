@@ -1,11 +1,11 @@
 /*************************************************************************************************
  * <pre>
- * @项目名称:   react-native-template-wx
+ * @项目名称:   无星的脚手架
  * @版权所有:   wuxing (C) 2019
  *
  *
  * @类描述:
- * @版本:
+ * @版本:         V2.0.0
  * @作者:         wuxing
  * @邮箱:         329106954@qq.com
  * @创建时间:     2019-04-29 16:17
@@ -16,9 +16,22 @@
  -----------------------------------------------------------------------------------------------
  </pre>
  ************************************************************************************************/
-import {NativeModules, Platform} from "react-native";
-
+import {Platform,} from "react-native";
+import {navigate,popViewCtrl} from "react-native-csh-bridge"
+import {Toast,Loading} from "react-native-csshotel-component"
 export class Native {
+
+    static showToast(message){
+        Toast.showToast(message)
+    }
+
+    static showLoading(){
+        Loading.showLoading()
+    }
+
+    static dismissLoading(){
+        Loading.dismissLoading()
+    }
 
     /**
      * 
@@ -28,15 +41,15 @@ export class Native {
      */
     static navigate(moduleName,fileName,params){
         if (Platform.OS === 'ios'){
-            NativeModules.wxnative.navigate(moduleName,fileName,params)
+            navigate(moduleName,fileName,params)
         } else {
-            // ToastAndroid.show(message)
+            navigate(moduleName,fileName,params)
         }
     }
 
     static popViewCtrl(){
         if (Platform.OS === 'ios'){
-            NativeModules.wxnative.popViewCtrl()
+            popViewCtrl()
         } else {
             // ToastAndroid.show(message)
         }

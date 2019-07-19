@@ -1,11 +1,11 @@
 /*************************************************************************************************
  * <pre>
- * @项目名称:   react-native-template-wx
+ * @项目名称:   无星的脚手架
  * @版权所有:   wuxing (C) 2019
  *
  *
  * @类描述:
- * @版本:
+ * @版本:         V2.0.0
  * @作者:         wuxing
  * @邮箱:         329106954@qq.com
  * @创建时间:     2019-04-29 18:23
@@ -19,8 +19,10 @@
 
 import React from "react";
 import fetch from "./FetchBase";
-import { Toast,Loading} from "../../component";
+import { Toast } from "react-native-csshotel-component";
+import { Native } from "../../native";
 import RNFetchBlob from 'rn-fetch-blob'
+import { file } from "@babel/types";
 
 class Fetch {
     //网络超时时间(毫秒)
@@ -84,7 +86,7 @@ class Fetch {
 
         //进行网络请求,科里化操作
         return new Promise((resolve, reject) => {
-            Loading.showLoading()
+            Native.showLoading()
             fetch(url, {
                 method: 'GET',
                 headers: headers,
@@ -111,7 +113,7 @@ class Fetch {
                     reject(error.response)
                 })
                 .finally(() => {
-                    Loading.dismissLoading()
+                    Native.dismissLoading()
                 })
         })
     }
@@ -122,7 +124,7 @@ class Fetch {
 
         //进行网络请求,科里化操作
         return new Promise((resolve, reject) => {
-            Loading.showLoading()
+            Native.showLoading()
             fetch(url, {
                 method: 'POST',
                 headers: headers,
@@ -150,7 +152,7 @@ class Fetch {
                     reject(error.response)
                 })
                 .finally(() => {
-                    Loading.dismissLoading()
+                    Native.dismissLoading()
                 })
         })
     }
@@ -168,7 +170,7 @@ class Fetch {
 
         //进行网络请求,科里化操作
         return new Promise((resolve, reject) => {
-            Loading.showLoading()
+            Native.showLoading()
             fetch(url, {
                 method: 'POST',
                 headers: this.headForm,
@@ -196,7 +198,7 @@ class Fetch {
                     reject(error.response)
                 })
                 .finally(() => {
-                    Loading.dismissLoading()
+                    Native.dismissLoading()
                 })
         })
     }

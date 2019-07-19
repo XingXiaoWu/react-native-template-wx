@@ -1,4 +1,5 @@
 #!/bin/sh
+
     # 遍历的示例demo
     # workdir=$(pwd)
     # echo "当前目录$workdir"
@@ -20,10 +21,12 @@
 #定义变量workpath标示当前脚本所处位置
 workpath="当前项目所处位置"
 targetName="当前项目名称"
+
 #获取当前项目所处位置
 function getPath(){
     workpath=$(pwd)
 }
+
 # 获取当前项目名称
 #参数要求:1:workpath
 function getTargetName(){
@@ -31,32 +34,13 @@ function getTargetName(){
     #echo "$1" # arguments are accessible through name, echo "$1" # arguments are accessible through , ,...,...
 }
 
-#安装link项目
+#安装link项目(弃用)
 function npmlink(){
     react-native link
 }
-#替换ios的appdelegate文件
-#参数要求:1:workpath 2:targetName
-function replaceAppdelegate(){
-    #1.定义新旧文件
-    #1.定义新旧文件
-    newh=$1/iosReplace/AppDelegate.h
-    newm=$1/iosReplace/AppDelegate.m
-    oldh=$1/ios/$2/AppDelegate.h
-    oldm=$1/ios/$2/AppDelegate.m
-    #2.拷贝并替换文件
-    cp $newh $oldh
-    cp $newm $oldm
-    echo "替换完毕,删除待替换文件"
-    rm -r $1/iosReplace/
-    # 3.替换appdelegate.m里的语句
-    target_sentence="replace"
-    replace_sentence="WXRNViewCtrl *ctrl = [[WXRNViewCtrl alloc]initWithModuleName:@\"$2\" fileName:@\"$2\" params:launchOptions];"
-    sed -i "" "25s/$target_sentence/$replace_sentence/g" $oldm
-    # 替换完毕
-}
 
-#添加pod,
+
+#添加pod(弃用)
 #参数要求:1:workpath 2:targetName
 function addPod(){
     cd $1/ios
@@ -113,8 +97,24 @@ function addPod(){
 getPath
 getTargetName $workpath
 
-npmlink
-echo "替换ios的启动文件"
+
+# npmlink
+# 1.添加pod install
+source $workpath/script/replaceFun.sh
+replacePod
+
+# 2.pod install
+cd $workpath/ios
+pod install
+
+# 3."替换ios的启动文件"
 replaceAppdelegate $workpath $targetName
-#echo "给ios加pod"
-#addPod  $workpath $targetName
+
+cd $workpath
+# 4."替换wkwebview"
+echo "替换wkwebview"
+replaceWkWebView
+
+# 5.放开对ios的http限制
+echo "放开对ios的http限制"
+replaceToSkipHttpsiOS

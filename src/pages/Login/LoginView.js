@@ -1,11 +1,11 @@
 /*************************************************************************************************
  * <pre>
- * @项目名称:   react-native-template-wx
+ * @项目名称:   Test
  * @版权所有:   wuxing (C) 2019
  *
  *
  * @类描述:
- * @版本:
+ * @版本:         V2.0.0
  * @作者:         wuxing
  * @邮箱:         329106954@qq.com
  * @创建时间:     2019-04-18 18:49
@@ -24,11 +24,10 @@ import {
     Image,
     TextInput
 } from 'react-native';
-import { CssAddButton, WxButton, CssSwitchButton, TextButton, Toast } from "../../component";
+import { CssButton, CssSwitchButton, Toast,toDips,toDipsWidth,toDipsHeight } from "react-native-csshotel-component";
 import NavigationService from "../../navigation/NavigationService";
 import { inject } from "mobx-react/index";
 import { LoginModel } from "./model/LoginModel";
-import { toDipsHeight, toDipsWidth } from "../../utils/PixelRatioUtils";
 import { Native } from "../../native";
 import { ImageSources } from '../../res/ImageSources';
 import { FetchUntil } from '../../utils';
@@ -73,7 +72,7 @@ export class LoginView extends Component {
                     placeholder="账号"
                 />
 
-                <WxButton
+                <CssButton
                     text={"去抖"}
                     width={100}
                     height={45}
@@ -84,7 +83,7 @@ export class LoginView extends Component {
                     }}
                 />
 
-                <WxButton
+                <CssButton
                     text={"登录"}
                     disabled={this.state.disabled}
                     width={100}
@@ -96,7 +95,7 @@ export class LoginView extends Component {
                 />
 
 
-                <WxButton
+                <CssButton
                     text={"下一页"}
                     width={100}
                     height={45}
@@ -124,7 +123,7 @@ export class LoginView extends Component {
                     source={ImageSources.common.test_img}
                 />
 
-                <WxButton
+                <CssButton
                     text={"点击下载bundle模块"}
                     // disabled={this.state.disabled}
                     width={100}
@@ -135,7 +134,7 @@ export class LoginView extends Component {
                     }}
                 />
 
-                <WxButton
+                <CssButton
                     text={"变黄"}
                     width={100}
                     height={45}
@@ -145,7 +144,7 @@ export class LoginView extends Component {
                     }}
                 />
 
-                <WxButton
+                <CssButton
                     text={"变红"}
                     width={100}
                     height={45}

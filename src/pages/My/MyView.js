@@ -1,11 +1,11 @@
 /*************************************************************************************************
  * <pre>
- * @项目名称:   react-native-template-wx
+ * @项目名称:   Test
  * @版权所有:   wuxing (C) 2019
  *
  *
  * @类描述:
- * @版本:
+ * @版本:         V2.0.0
  * @作者:         wuxing
  * @邮箱:         329106954@qq.com
  * @创建时间:     2019-04-18 18:48
@@ -24,8 +24,8 @@ import {
     Image,
 } from 'react-native';
 import NavigationService from "../../navigation/NavigationService";
+import {CssButton} from "react-native-csshotel-component";
 import {inject, observer} from "mobx-react/index";
-import {WxButton} from "../../component";
 
 @inject('userInfo')
 @observer
@@ -45,7 +45,7 @@ export class MyView extends Component {
         return (
             <View style={MyViewStyles.container}>
                 <Text>MyView</Text>
-                <WxButton
+                <CssButton
                     text={"点我跳转回登录"}
                     onPress={()=>{
                         NavigationService.navigate("LoginView")
@@ -53,7 +53,7 @@ export class MyView extends Component {
                 />
                 <Text>用户名:{this.userInfo.userName}</Text>
 
-                <WxButton
+                <CssButton
                     text={"点击用户名改为无星"}
                     onPress={()=>{
                         this.userInfo.setUserName("无星")

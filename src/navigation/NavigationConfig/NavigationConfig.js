@@ -1,11 +1,11 @@
 /*************************************************************************************************
  * <pre>
- * @项目名称:   react-native-template-wx
+ * @项目名称:   wqw
  * @版权所有:   wuxing (C) 2019
  *
  *
  * @类描述:
- * @版本:
+ * @版本:         V2.0.0
  * @作者:         wuxing
  * @邮箱:         329106954@qq.com
  * @创建时间:     2019-05-23 10:59
@@ -18,7 +18,7 @@
  ************************************************************************************************/
 import React from "react";
 import {View, Text, TouchableOpacity} from "react-native"
-import {toDips, toDipsHeight, toDipsWidth} from "../../utils/PixelRatioUtils";
+import {toDips, toDipsHeight, toDipsWidth} from "react-native-csshotel-component";
 import {Image} from "react-native"
 import {action, computed, observable} from "mobx"
 

@@ -18,23 +18,29 @@ function getTargetName(){
     targetName=${1##*/}
 }
 
-#安装link项目
+#初始化rn项目
+function initreactnative () {
+    yarn add react-native-csh-bridge
+    yarn add react-native-csshotel-component
+}
+
+#初始化ios
 function initios(){
     npm run initios
 }
 
-function addBridge () {
-    yarn add react-native-wx-bridge
-}
 
-getPath
 echo "获取当前项目路径,路径$workpath"
-getTargetName $workpath
+getPath
 echo "当前项目名称:$targetName"
-echo "添加bridge"
-addBridge
+getTargetName $workpath
+
+echo "初始化rn项目"
+initreactnative
 echo "初始化ios"
 initios
-source $workpath/script/replaceFun.sh
-replaceWkWebView
+
+#echo "替换需要替换的库"
+#source $workpath/script/replaceFun.sh
+#replaceWkWebView
 

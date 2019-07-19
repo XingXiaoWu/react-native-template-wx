@@ -65,5 +65,6 @@ cd 项目根目录
 react-native run-android
 
 ```
-
-
+## TODO
+1. 调研res资源文件是否可以多路径/多源
+2. 编写脚本：拷贝package.json到Android项目中并移除项目名

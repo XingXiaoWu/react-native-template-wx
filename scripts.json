@@ -1,6 +1,8 @@
 {
     "init": "chmod 777 ./script/init.sh && ./script/init.sh",
     "initios": "chmod 777 ./script/initiOS.sh && ./script/initios.sh",
-    "iosbundle":"chmod 777 ./script/iosbundle.sh && ./script/iosbundle.sh",
-    "install2":"chmod 777 ./script/yarn.sh && ./script/yarn.sh"
+    "iosbundle": "chmod 777 ./script/iosbundle.sh && ./script/iosbundle.sh",
+    "yarn": "chmod 777 ./script/yarn.sh && ./script/yarn.sh",
+    "uploadios": "chmod 777 ./script/upload.sh && ./script/upload.sh",
+    "androidbundle": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res"
 }
